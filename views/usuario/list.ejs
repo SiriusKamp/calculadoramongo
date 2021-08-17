@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas - LIST</title>
+    <style>
+        table,td,tr {
+            border: solid 1px black;
+        }
+        td,th {
+            padding: 20px ;
+        }
+        th {
+            font-weight:bold;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Numero1</th>
+            <th>Numero2</th>
+            <th>Operador</th>
+            <th>Resultado</th>
+            <th>Deletar</th>
+        </tr>
+
+        <% Contas.forEach(function(Conta){ %> 
+            <tr>
+                <td> <%=Conta._id%> </td>
+                <td> <%=Conta.numero1%> </td>
+                <td> <%=Conta.numero2%> </td>
+                <td> <%=Conta.Operação%> </td>
+                <td> <%=Conta.Resultado%> </td>
+                <td> <a href="/conta/del/<%=Conta._id%>">Deletar</a></td>
+            </tr>
+        <% }) %>
+
+    </table>
+    
+</body>
+</html>
